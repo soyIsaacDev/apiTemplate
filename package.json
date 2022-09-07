@@ -1,5 +1,5 @@
 {
-  "name": "calendarapi",
+  "name": "api_sequelize_template",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,7 +10,7 @@
     "lint": "eslint"
   },
   "keywords": [],
-  "author": "",
+  "author": "Isaac Borbon Miquirray",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.19",

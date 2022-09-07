@@ -6,9 +6,9 @@ const dbUserName = process.env.DB_USER;
 const dbPasword = process.env.DB_PASSWORD;
 const dbHost = process.env.DB_HOST;
 const dbPort = process.env.DB_PORT;
-const dbDialect = process.env.DB_DATABASE
+const dbName = process.env.DB_NAME
 
-const connectionString = `${dbEngine}://${dbUserName}:${dbPasword}@${dbHost}:${dbPort}/${dbDialect}`;
+const connectionString = `${dbEngine}://${dbUserName}:${dbPasword}@${dbHost}:${dbPort}/${dbName}`;
 const sequelize = new Sequelize(connectionString, {
   logging: false, //Loging Deshabilitado
 });
@@ -20,4 +20,18 @@ try {
   console.error("Unable to connect to the database:", error);
 }
 
-//Importar Modelos y hacer las relaciones de la DB
+//Modelos DB
+
+const modelExample = require("./models/exampleModel");
+
+modelExample(sequelize);
+
+let {ExampleModel} = sequelize.models;
+
+// Relaciones DB
+
+
+module.exports = {
+  ...sequelize.models,
+    db: sequelize,
+}
