@@ -1,0 +1,5 @@
+To use this template
+
+Add variabls to .env file 
+and
+Add /*.env to gitIgnore
